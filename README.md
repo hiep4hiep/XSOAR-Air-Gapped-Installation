@@ -109,7 +109,7 @@ du -sh /home/demisto/.local/share/containers/storage/overlay
 ll /home/demisto/.local/share/containers/storage/overlay
 ```
 
-### Step 6 - Log in to XSOAR and verify everything
+### Step 6: Log in to XSOAR and verify everything
 - Run `/docker_images` in Playgroud
 <img width="882" alt="image" src="https://user-images.githubusercontent.com/41276379/158926938-9808cae7-a272-4830-aa49-00e715fe60ea.png">
 - Run `!py script="demisto.results('hello world')"`
@@ -124,4 +124,3 @@ Red Hat Enterprise Linux release 8.5 (Ootpa)
 podman version 3.3.1
 ```
 
-- Run !py script="demisto.results('hello world')"
