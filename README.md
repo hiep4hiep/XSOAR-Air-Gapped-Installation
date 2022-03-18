@@ -1,4 +1,4 @@
-# XSOAR-Air-Gapped-Installation for RHEL 8
+# XSOAR Air Gapped Installation for RHEL 8
 ### Step 1 - Activate subscription for your server
 - Go to Redhat website, create a System profile
 - Attach subscription in Subscription tab
