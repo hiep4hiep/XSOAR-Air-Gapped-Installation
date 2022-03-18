@@ -119,6 +119,12 @@ ll /home/demisto/.local/share/containers/storage/overlay
 
 `firewall-cmd --permanent --zone=public --add-port=443/tcp`
 
+- Or just disable it
+```
+systemctl stop firewalld
+systemctl disable firewalld
+```
+
 
 ### Step 7: Log in to XSOAR and verify everything
 - Run `/docker_images` in Playground
