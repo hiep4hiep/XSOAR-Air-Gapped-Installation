@@ -56,7 +56,7 @@ yum -y module install container-tools
 ```
 
 ### Step 4: Install XSOAR
-- Copy the XSOAR installation file (demisto-xxxx.sh) to server
+- Copy the XSOAR installation file (demisto-xxxx.sh) to server and run it
 ```chmod +x demisto-xxxx.sh
 ./demisto-xxxx.sh -- -tools=false
 ```
