@@ -11,7 +11,8 @@
 `echo "/dev/sr0   /media/iso                       iso9660     defaults        0 0" >> /etc/fstab`
 Then reboot the server
 - Check the content of /media/iso
-```[root@localhost ~]# ll /media/iso
+```
+[root@localhost ~]# ll /media/iso
 total 48
 dr-xr-xr-x. 4 root root  2048 Oct 13 18:57 AppStream
 dr-xr-xr-x. 4 root root  2048 Oct 13 18:57 BaseOS
@@ -30,7 +31,8 @@ dr-xr-xr-x. 2 root root  2048 Oct 13 18:57 isolinux
 - Remove everything in /etc/yum.repos.d `rm -f /etc/yum.repos.d/*`
 - Create a new repo file `vi /etc/yum.repos.d/local.repo` with below content:
 
-```[LocalRepo_BaseOS]
+```
+[LocalRepo_BaseOS]
 name=LocalRepository_BaseOS
 baseurl=file:///media/iso/BaseOS
 enabled=1
@@ -58,7 +60,8 @@ yum -y module install container-tools
 ### Step 4: Install XSOAR
 - From a internet available client, download the installation file (fill in your token and email) `wget -O dockerimages.tar "https://download.demisto.com/download-params?token=xxxxxxx&email=user@paloaltonetworks.com&eula=accept"`
 - Copy the XSOAR installation file (demisto-xxxx.sh) to server and run it
-```chmod +x demisto-xxxx.sh
+```
+chmod +x demisto-xxxx.sh
 ./demisto-xxxx.sh -- -tools=false
 ```
 
