@@ -115,9 +115,11 @@ ll /home/demisto/.local/share/containers/storage/overlay
 ```
 
 ### Step 6: Log in to XSOAR and verify everything
-- Run `/docker_images` in Playgroud
+- Run `/docker_images` in Playground
+- 
 <img width="882" alt="image" src="https://user-images.githubusercontent.com/41276379/158926938-9808cae7-a272-4830-aa49-00e715fe60ea.png">
 - Run `!py script="demisto.results('hello world')"`
+
 <img width="461" alt="image" src="https://user-images.githubusercontent.com/41276379/158927014-57c5a3de-5e4c-40a7-8930-6dcd87cbf3dc.png">
 
 ### Note
