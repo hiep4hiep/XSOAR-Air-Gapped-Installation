@@ -120,7 +120,7 @@ ll /home/demisto/.local/share/containers/storage/overlay
 `firewall-cmd --permanent --zone=public --add-port=443/tcp`
 
 - selinux command to allow containers access to host folder /var/lib/demisto/temp 
-- 
+
 `chcon -Rt svirt_sandbox_file_t /var/lib/demisto/temp`
 
 
