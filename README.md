@@ -73,7 +73,7 @@ chown demisto:demisto /images/dockers.tar # Change owner of this file to demisto
 sudo -su demisto # To change to bash under demisto user
 podman load -i /images/dockers.tar # It will take a while to load the 30GB file
 ```
-- Verify the images are loaded (still run these command under **demisto** user)
+- Verify the images are loaded (still run these commands under **demisto** user)
 ```
 bash-4.4$ podman image list
 REPOSITORY                          TAG           IMAGE ID      CREATED        SIZE
