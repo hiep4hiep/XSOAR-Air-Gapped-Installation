@@ -114,7 +114,17 @@ du -sh /home/demisto/.local/share/containers/storage/overlay
 ll /home/demisto/.local/share/containers/storage/overlay
 ```
 
-### Step 6: Log in to XSOAR and verify everything
+### Step 6: firewalld and selinux
+- Open the firewalld rule for 443
+
+`firewall-cmd --permanent --zone=public --add-port=443/tcp`
+
+- selinux command to allow containers access to host folder /var/lib/demisto/temp 
+- 
+`chcon -Rt svirt_sandbox_file_t /var/lib/demisto/temp`
+
+
+### Step 7: Log in to XSOAR and verify everything
 - Run `/docker_images` in Playground
 
 <img width="882" alt="image" src="https://user-images.githubusercontent.com/41276379/158926938-9808cae7-a272-4830-aa49-00e715fe60ea.png">
