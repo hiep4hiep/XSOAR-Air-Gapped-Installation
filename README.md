@@ -56,12 +56,14 @@ yum -y module install container-tools
 ```
 
 ### Step 4: Install XSOAR
+- From a internet available client, download the installation file (fill in your token and email) `wget -O dockerimages.tar "https://download.demisto.com/download-params?token=xxxxxxx&email=user@paloaltonetworks.com&eula=accept"`
 - Copy the XSOAR installation file (demisto-xxxx.sh) to server and run it
 ```chmod +x demisto-xxxx.sh
 ./demisto-xxxx.sh -- -tools=false
 ```
 
 ### Step 5: Load container images
+- From a internet available client, download the docker images tar file `wget -O dockerimages.tar "https://download.demisto.com/download-params?token=xxxxxxx&email=user@paloaltonetworks.com&downloadName=dockerimages&eula=accept"`
 - Copy the XSOAR container images tar file (dockers.tar) to server (e.g to /images/dockers.tar path)
 ```
 chown demisto:demisto /images/dockers.tar # Change owner of this file to demisto:demisto
