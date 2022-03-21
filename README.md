@@ -6,10 +6,21 @@
 - Run: `subscription-manager import --certificate=/tmp/Name_Of_Downloaded_Entitlement_Cert.pem`
 
 ### Step 2 - Create a offline repo
-- Mount Redhat installation DVD ISO to your server. (e.g the DVD ISO is at /dev/sr0 or change that to suite your environment)
+- Create an iso directory:
+`mkdir -p /media/iso`
+
+- If you are using VMWare, attach the ISO to your VM then mount Redhat installation DVD ISO to your server. (e.g the DVD ISO is at /dev/sr0 or change that to suite your environment)
 
 `echo "/dev/sr0   /media/iso                       iso9660     defaults        0 0" >> /etc/fstab`
 Then reboot the server
+
+- If you have a bare metal server or don't use CD/DVD system with your Linux, then follow these steps:
++ Copy the DVD ISO to a directory on your machine (e.g. /root/rhel-8.5-x86_64-dvd.iso)
++ Mount the ISO to /media/iso
+```
+mount -o loop /root/rhel-8.5-x86_64-dvd.iso /media/iso
+```
+
 - Check the content of /media/iso
 ```
 [root@localhost ~]# ll /media/iso
@@ -67,6 +78,11 @@ chmod +x demisto-xxxx.sh
 
 ### Step 5: Load container images
 - From a internet available client, download the docker images tar file `wget -O dockerimages.tar "https://download.demisto.com/download-params?token=xxxxxxx&email=user@paloaltonetworks.com&downloadName=dockerimages&eula=accept"`
+- Create a folder to store the images
+```
+mkdir /images
+chown -R /images
+```
 - Copy the XSOAR container images tar file (dockers.tar) to server (e.g to /images/dockers.tar path)
 ```
 chown demisto:demisto /images/dockers.tar # Change owner of this file to demisto:demisto
@@ -117,7 +133,10 @@ ll /home/demisto/.local/share/containers/storage/overlay
 ### Step 6: Open 443 in firewalld
 - Open the firewalld rule for 443
 
-`firewall-cmd --permanent --zone=public --add-port=443/tcp`
+```
+firewall-cmd --permanent --zone=public --add-port=443/tcp
+firewall-cmd --reload
+```
 
 - Or just disable it
 ```
@@ -127,6 +146,7 @@ systemctl disable firewalld
 
 
 ### Step 7: Log in to XSOAR and verify everything
+- Open your browser and access `https://your-server-ip` and use `admin/admin` as the default credential
 - Run `/docker_images` in Playground
 
 <img width="882" alt="image" src="https://user-images.githubusercontent.com/41276379/158926938-9808cae7-a272-4830-aa49-00e715fe60ea.png">
