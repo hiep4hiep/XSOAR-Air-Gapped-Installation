@@ -82,7 +82,7 @@ chmod +x demisto-xxxx.sh
 - Create a folder to store the images
 ```
 mkdir /images
-chown -R /images
+chown demisto:demisto /images
 ```
 - Copy the XSOAR container images tar file (dockers.tar) to server (e.g to /images/dockers.tar path)
 ```
