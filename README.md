@@ -15,9 +15,10 @@
 Then reboot the server
 
 - If you have a bare metal server or don't use CD/DVD system with your Linux, then follow these steps:
-+ Copy the DVD ISO to a directory on your machine (e.g. /root/rhel-8.5-x86_64-dvd.iso)
-+ Mount the ISO to /media/iso
 ```
+- Copy the DVD ISO to a directory on your machine (e.g. /root/rhel-8.5-x86_64-dvd.iso)
+- Then mount the ISO to /media/iso
+
 mount -o loop /root/rhel-8.5-x86_64-dvd.iso /media/iso
 ```
 
