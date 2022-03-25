@@ -12,7 +12,7 @@
 - If you are using VMWare vSphere, attach the ISO to your VM then mount Redhat installation DVD ISO to your server. (e.g the DVD ISO is at /dev/sr0 or change that to suite your environment)
 
 `echo "/dev/sr0   /media/iso                       iso9660     defaults        0 0" >> /etc/fstab`
-Then reboot the server
+Then reboot the server or `mount -a` to make the fstab works.
 
 - If you have a bare metal server or don't use CD/DVD system in your hypervisor, then follow these steps:
 ```
